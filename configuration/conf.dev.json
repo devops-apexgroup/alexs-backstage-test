@@ -1,0 +1,59 @@
+{
+    "metadata" : {
+        "name": "Demo Airflow-Enabling Feed",
+        "code": "AIRDEM001",
+        "script": "demo_airflow_enabling_feed.py",
+        "task_name": "demo_airflow_enabling_feed",
+        "company": "Ouh Mama Lounge Bar",
+        "expiration_date" : "2025-03-04"
+    },
+    "scanners" : {
+        "type":"smb",
+        "host": "airflow_smb",
+        "port": "445",
+        "credentials": {"username": "foo", "password": "pass"},
+        "path" : "//airflow_smb/public/source/ready_to_send"
+    },
+    "readers" :{
+        "type":"smb",
+        "host": "airflow_smb",
+        "port": "445",
+        "credentials": {"username": "foo", "password": "pass"}
+    },
+    "handlers" :{
+        "type":"smb",
+        "host": "airflow_smb",
+        "port": "445",
+        "credentials": {"username": "foo", "password": "pass"},
+        "reject_path": "//airflow_smb/public/source/rejected",
+        "archive_path": "//airflow_smb/public/source/archive"
+    },
+    "uploaders" : {
+        "type":"sftp",
+        "host": "airflow_sftp",
+        "port": "22",
+        "credentials": {"username": "foo", "password": "pass"},
+        "path" : "/upload/target"
+    },
+    "notifiers" :  {
+        "type" : "smtp",
+        "host" : "airflow_maildev",
+        "port" : "1025",
+        "sender" : "itnotifications@apexfs.group",
+        "credentials" : {
+            "username" : "foo",
+            "password" : "pass"
+        },
+        "success_recipients" : ["enrique.brazalez@apexfs.group", "samuel.verdejo@apexfs.group"],
+        "warning_recipients" : ["enrique.brazalez@apexfs.group", "samuel.verdejo@apexfs.group"],
+        "error_recipients" : ["enrique.brazalez@apexfs.group", "samuel.verdejo@apexfs.group"],
+        "expiration_recipients" : ["enrique.brazalez@apexfs.group", "samuel.verdejo@apexfs.group"]
+        
+    },
+    "removars" : {
+        "type":"smb",
+        "host": "airflow_smb",
+        "port": "445",
+        "credentials": {"username": "foo", "password": "pass"}
+    }
+}

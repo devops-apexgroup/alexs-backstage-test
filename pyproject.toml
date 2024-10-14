@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "airflow-template"
+version = "0.1.0"
+description = "A template for creating DataFeeds using Airflow and DataFeedCommons"
+authors = ["Samuel Verdejo <samuel.verdejo@apexfs.group>", "Kike Brazález <enrique.brazalez@apexfs.group>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+datafeeds = { git = "git@github.com:sannegroup/datafeed-commons.git", rev = "1.7.0" }
+numpy = "1.26.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
