@@ -4,6 +4,7 @@ metadata:
   name: alexs-backstage-test
   annotations:
     github.com/project-slug: devops-apexgroup/alexs-backstage-test
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: other
   lifecycle: unknown
