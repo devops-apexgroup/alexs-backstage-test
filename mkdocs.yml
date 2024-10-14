@@ -3,10 +3,4 @@ site_description: 'Main documentation for Backstage features and framework APIs'
 repo_url: https://github.com/devops-apexgroup/alexs-backstage-test/
 edit_uri: edit/master/docs
 
-plugins:
-  - techdocs-core
-
 # For sidebar navigation on https://backstage.io/, see `microsite/sidebars.js`
-nav:
-  - Overview:
-      Test text
